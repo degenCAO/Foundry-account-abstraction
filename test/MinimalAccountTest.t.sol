@@ -43,6 +43,4 @@ contract MinimalAccountTest is Test {
         vm.prank(user);
         minimalAccount.execute(dest, value, functionData);
     }
-
-    function testRecoverUserOperation() public {}
 }
