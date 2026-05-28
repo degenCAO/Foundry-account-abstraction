@@ -121,8 +121,9 @@ contract MinimalAccountTest is Test {
         vm.deal(address(minimalAccount), 1e18);
 
         //Act
+        address entryPoint = helperConfig.getConfig().entryPoint;
         vm.prank(user, user);
-        IEntryPoint(helperConfig.getConfig().entryPoint).handleOps(ops, payable(user));
+        IEntryPoint(entryPoint).handleOps(ops, payable(user));
 
         //Assert
 
