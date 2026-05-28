@@ -11,6 +11,7 @@ contract DeployMinimal is Script {
     function deployMinimalAccount() public returns (HelperConfig, MinimalAccount) {
         HelperConfig helperConfig = new HelperConfig();
         HelperConfig.NetworkConfig memory config = helperConfig.getConfig();
+
         vm.startBroadcast(config.account);
         console2.log("Config account is:");
         console2.logAddress(config.account);
